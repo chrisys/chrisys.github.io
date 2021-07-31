@@ -1,0 +1,44 @@
+---
+title: My projects
+---
+<header class="intro-header" style="background-image:url(/assets/images/page-banners/projects.jpg);">
+    <div class="container">
+      <div class="inner-message">
+        <h1>{{ page.title }}</h1>
+        <h3>Experiments, projects and other paraphernalia</h3>
+      </div>
+    </div>
+  </header>
+  
+  <aside class="content-section-a">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+            <p class="lead">This is my archive of the various stuff I have worked on and played with. I will in time be adding further information for some projects where available. It is hence not 100% complete right now but if you're interested in anything hit me up and I'd be glad to help!</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+  
+  <section class="content-section-b">
+    <div class="container">
+      <div class="row equal-height">
+        {% assign projectcards = site.projectlinks | reverse %}
+        {% for projectcard in projectcards %}
+         <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img class="card-img-top" src="/assets/images/{{ projectcard.collection }}/{{ projectcard.slug }}.jpg" alt="{{ projectcard.title }}">
+              <div class="card-body">
+                <h4 class="card-title"><i class="fa fa-cog"></i> {{ projectcard.name }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">{{ projectcard.date | date: "%B %Y" }}</h6>
+                <p class="card-text">{{ projectcard.card_text }}</p>
+                {% if projectcard.link %}
+                  <a class="btn btn-info btn-sm" href="{{ projectcard.link }}">Read more</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

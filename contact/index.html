@@ -1,0 +1,39 @@
+---
+title: Contact
+---
+<section class="content-section-a no-banner">
+
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-6">
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <h4><i class="fa fa-cog"></i> Contact me</h4>
+          <h2 class="section-heading">Get in touch</h2>
+          <p class="lead">If you'd like to get in touch directly try the form or alternatively shoot me a mail directly to chris at thefnet.co.uk</p>
+          <p>All form fields are required. If you're a robot you'll need to lie about it or mail me at 636872697340746865666e65742e636f2e756b.</p>
+        </div>
+  
+        <div class="col-lg-6">
+            <div class="section-heading"></div>
+
+            <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xrgryqrn" method="post">
+                <div class="form-group <?=$v->errors('name') ? 'has-error' : ''?>">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" name="name" id="full-name" placeholder="First and Last" required="">
+                </div>
+                <div class="form-group <?=$v->errors('email') ? 'has-error' : ''?>">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+                </div>
+                <div class="form-group <?=$v->errors('message') ? 'has-error' : ''?>">
+                    <label for="message">Message</label>
+                    <textarea rows="5" class="form-control" name="message" id="message" placeholder="Say hello!" required=""></textarea>
+                </div>
+                <button type="submit" value="Submit" class="btn btn-info">Send message</button>
+            </form>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </section>
