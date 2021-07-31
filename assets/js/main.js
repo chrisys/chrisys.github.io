@@ -1,6 +1,6 @@
 function getSpotifyInfo() {
   
-  $.getJSON('http://ccwspotify.crocker-white.com/spotify.php', null, function(res) {
+  $.getJSON('https://ccwspotify.crocker-white.com/spotify.php', null, function(res) {
     $('#spotify-info-container').animate({ 'opacity' : 1 }, 400);
 
     if(res.nowplaying==true)
