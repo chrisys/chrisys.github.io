@@ -137,6 +137,10 @@ body, html {
     margin-top:71px;
   }
   
+  #spotify-info-container {
+    opacity: 0;
+  }
+
   .spotify-info {
     background-color: rgba(0, 0, 0, 0.48);
   }
