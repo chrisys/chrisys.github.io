@@ -20,6 +20,10 @@ body, html {
     font-family: 'DINCond-Bold';
     text-transform: uppercase;
   }
+
+  h4 a {
+    color: inherit;
+  }
   
   .btn-info {
       color: #fff;
@@ -303,3 +307,6 @@ body, html {
     margin: 15px 0 0;
   }
   
+  i.fa-external-link {
+    margin-left: 0.5em;
+  }

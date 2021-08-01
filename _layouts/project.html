@@ -1,8 +1,29 @@
 ---
 layout: default
 ---
-<h1>{{ page.name }}</h1>
-<h2>{{ page.title }}</h2>
-{{ page.card_text }}
 
-{{ content }}
+<header class="intro-header" style="background-image:url(/assets/images/{{ page.collection }}/{{ page.slug }}/banner.jpg);">
+    <div class="container">
+      <div class="inner-message">
+
+      </div>
+    </div>
+  </header>
+  
+  <aside class="content-section-a">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+            <h4><i class="fa fa-cog"></i> <a href="{{ site.data.navigation[0].link }}">Projects</a></h4>
+            <h2 class="section-heading">{{ page.name }}</h2>
+            <p class="lead">{{ page.card_text }}</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+  
+  <section class="content-section-b">
+    <div class="container">
+        {{ content }}
+    </div>
+  </section>

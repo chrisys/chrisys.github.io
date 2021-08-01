@@ -1,5 +1,5 @@
 ---
-title: My projects
+title: Projects
 ---
 <header class="intro-header" style="background-image:url(/assets/images/page-banners/projects.jpg);">
     <div class="container">
@@ -23,8 +23,9 @@ title: My projects
   <section class="content-section-b">
     <div class="container">
       <div class="row equal-height">
-        {% assign projectcards = site.projectlinks | reverse %}
-        {% for projectcard in projectcards %}
+        {% assign projectcards = site.projects | concat: site.projectlinks %}
+        {% assign sortedprojectcards = projectcards | sort: 'date' | reverse %}
+        {% for projectcard in sortedprojectcards %}
          <div class="col-lg-4 col-md-6">
             <div class="card">
               <img class="card-img-top" src="/assets/images/{{ projectcard.collection }}/{{ projectcard.slug }}.jpg" alt="{{ projectcard.title }}">
@@ -33,7 +34,9 @@ title: My projects
                 <h6 class="card-subtitle mb-2 text-muted">{{ projectcard.date | date: "%B %Y" }}</h6>
                 <p class="card-text">{{ projectcard.card_text }}</p>
                 {% if projectcard.link %}
-                  <a class="btn btn-info btn-sm" href="{{ projectcard.link }}">Read more</a>
+                  <a target="_blank" class="btn btn-info btn-sm" href="{{ projectcard.link }}">Read more <i class="fa fa-external-link"></i></a>
+                {% elsif projectcard.url != '/' %}
+                  <a class="btn btn-info btn-sm" href="{{ projectcard.url }}">Read more</a>
                 {% endif %}
               </div>
             </div>
