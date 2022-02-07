@@ -1,8 +1,9 @@
 ---
 layout: default
 ---
+{% assign media = "/assets/images/" | append:  page.collection | append: "/" | append:  page.slug %}
 
-<header class="intro-header" style="background-image:url(/assets/images/{{ page.collection }}/{{ page.slug }}/banner.jpg);">
+<header class="intro-header" style="background-image:url({{ media }}/banner.jpg);">
     <div class="container">
       <div class="inner-message">
 
@@ -23,7 +24,18 @@ layout: default
   </aside>
   
   <section class="content-section-b">
-    <div class="container">
+    <div class="container markdown-body">
         {{ content }}
     </div>
+  </section>
+
+  <section class="content-section-a">
+    <script src="https://utteranc.es/client.js"
+        repo="chrisys/chrisys.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
   </section>
