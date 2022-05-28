@@ -1,6 +1,6 @@
 ---
 name: Offset Smoker
-card_text: After wanting to cook some Texas BBQ and seeing the price of offset smokers here in the UK I decided to embark upon a project to design and build my own from scratch.
+card_text: After wanting to cook some Texas BBQ and seeing the price of offset smokers here in the UK I decided to embark upon a project to design and build my own from scratch in collaboration with my Dad.
 ---
 {% assign media = "/assets/images/" | append:  page.collection | append: "/" | append:  page.slug %}
 
