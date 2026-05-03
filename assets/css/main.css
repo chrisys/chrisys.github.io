@@ -116,6 +116,12 @@ body, html {
     padding-bottom: 6%;
     min-height: 20em;
   }
+
+  .intro-header--project .inner-message {
+    padding-top: 20%;
+    padding-bottom: 14%;
+    min-height: 40em;
+  }
   
   .intro-message>h1, .inner-message>h1 {
     margin: 0;
