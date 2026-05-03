@@ -2,7 +2,12 @@
 title: Experiments, small projects and other stuff
 ---
 
-<header class="intro-header" style="background-image:url(/assets/images/homepage-banners/baseballjackpot.jpg);">
+<header class="intro-header" id="homepage-header">
+<script>
+  var banners = ['baseballjackpot.jpg', 'osmelloscope.jpg', 'teslaroo.jpg'];
+  var pick = banners[Math.floor(Math.random() * banners.length)];
+  document.getElementById('homepage-header').style.backgroundImage = 'url(/assets/images/homepage-banners/' + pick + ')';
+</script>
     <div class="container">
       <div class="intro-message">
       </div>
@@ -12,7 +17,7 @@ title: Experiments, small projects and other stuff
           <div class="row no-gutter vertical-align">
             <div class="spotify-icon col-md-3 col-sm-3 col-3"><i class="fa fa-spotify"></i></div>
             <div class="spotify-live-info col-md-9 col-sm-9 col-9">
-              <p class="text-muted small"><img id="spotify-eq" alt="eq" src="/assets/images/eq.svg" /> <span id="spotify-devicename">&nbsp;</span> <a class="badge badge-pill badge-dark" href="https://www.last.fm/user/chrisys"><i class="fa fa-lastfm"></i></a></p>
+              <p class="text-muted small"><img id="spotify-eq" alt="eq" src="/assets/images/eq.svg" /> <span id="listening-label"></span> <a class="badge badge-pill badge-dark" href="https://www.last.fm/user/chrisys"><i class="fa fa-lastfm"></i></a></p>
               <p class="lead"><span id="spotify-trackname">&nbsp;</span></p>
               <p><span id="spotify-artistname">&nbsp;</span></p>
             </div>
