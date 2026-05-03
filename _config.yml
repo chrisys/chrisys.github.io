@@ -5,7 +5,10 @@ collections:
   projects:
     output: true
     permalink: /:collection/:title
-  
+  articles:
+    output: true
+    permalink: /:collection/:title
+
 
 defaults:
   - scope:
@@ -13,6 +16,11 @@ defaults:
       type: "projects"
     values:
       layout: "project"
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"
   - scope:
       path: ""
     values:
