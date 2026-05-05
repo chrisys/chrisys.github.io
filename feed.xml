@@ -1,0 +1,25 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title }}</title>
+    <link>{{ site.url }}</link>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Projects, articles, and making things — Chris Crocker-White</description>
+    <language>en-gb</language>
+    {% assign articles = site.articles | sort: 'date' | reverse %}
+    {% assign projects = site.projects | sort: 'date' | reverse %}
+    {% assign all_items = articles | concat: projects | sort: 'date' | reverse %}
+    {% for item in all_items %}
+    <item>
+      <title>{{ item.title | default: item.name | xml_escape }}</title>
+      <link>{{ site.url }}{{ item.url }}</link>
+      <guid isPermaLink="true">{{ site.url }}{{ item.url }}</guid>
+      <pubDate>{{ item.date | date: "%a, %d %b %Y 00:00:00 +0000" }}</pubDate>
+      <description>{{ item.description | default: item.card_text | xml_escape }}</description>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
